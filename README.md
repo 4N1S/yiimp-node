@@ -47,7 +47,8 @@ Example Api's server address: https://yiimp.eu/api or define our domaine, method
 
 **Response**
 
-    {"bitcore":
+    {
+      "bitcore":
       {"name":"bitcore","port":3556,"coins":1,"fees":2,"hashrate":47524264198,"workers":939,"estimate_current":"0.00000821","estimate_last24h":"0.00000904","actual_last24h":"0.01038","hashrate_last24h":50681728691.198}
     }
 
@@ -67,15 +68,11 @@ Request:
 ### currencies
 
 **Response**
-
-  {
-    "ALQO":
     {
       "algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968
 
     }
-  }
-
+  
 **Examples**
 Request:
     /api/currencies
@@ -100,17 +97,7 @@ Request:
     unpaid: 1.03839697,
     paid24h: 4.89693467,
     total: 5.93533164,
-    miners:
-     [ { version: 'ccminer/8.20-KlausT',
-         password: 'c=DSR',
-         ID: '',
-         algo: 'neoscrypt',
-         difficulty: 606,
-         subscribe: 1,
-         accepted: 1084499.629,
-         rejected: 0 
-       } 
-      ] 
+    miners:[] 
   }
 
 **Examples**
@@ -167,17 +154,7 @@ Request:
     unpaid: 1.03839697,
     paid24h: 4.89693467,
     total: 5.93533164,
-    miners:
-     [ { version: 'ccminer/8.20-KlausT',
-         password: 'c=DSR',
-         ID: '',
-         algo: 'neoscrypt',
-         difficulty: 606,
-         subscribe: 1,
-         accepted: 1084499.629,
-         rejected: 0 
-       } 
-      ] 
+    miners:[] 
   }
 
 **Examples**
@@ -201,13 +178,10 @@ Request:
 
 **Response**
 
-  {
-    "ALQO":
     {
       "algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968
 
     }
-  }
 
 **Examples**
 Request:
