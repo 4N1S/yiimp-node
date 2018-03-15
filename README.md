@@ -68,7 +68,8 @@ Request:
 
 **Response**
 
-  {"ALQO":
+  {
+    "ALQO":
     {
       "algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968
 
@@ -92,7 +93,8 @@ Request:
 
 **Response**
 
-  { currency: 'DSR',
+  { 
+    currency: 'DSR',
     unsold: 1.038396970406842,
     balance: 0,
     unpaid: 1.03839697,
@@ -132,7 +134,8 @@ Request:
 
 **Response**
 
-    {"bitcore":
+    {
+      "bitcore":
       {"name":"bitcore","port":3556,"coins":1,"fees":2,"hashrate":47524264198,"workers":939,"estimate_current":"0.00000821","estimate_last24h":"0.00000904","actual_last24h":"0.01038","hashrate_last24h":50681728691.198}
     }
 
@@ -157,7 +160,8 @@ Request:
 
 **Response**
 
-  { currency: 'DSR',
+  { 
+    currency: 'DSR',
     unsold: 1.038396970406842,
     balance: 0,
     unpaid: 1.03839697,
@@ -197,7 +201,8 @@ Request:
 
 **Response**
 
-  {"ALQO":
+  {
+    "ALQO":
     {
       "algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968
 
