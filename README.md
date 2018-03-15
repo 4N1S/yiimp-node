@@ -68,11 +68,12 @@ Request:
 ### currencies
 
 **Response**
+
     {
       "algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968
 
     }
-  
+ 
 **Examples**
 Request:
     /api/currencies
@@ -90,15 +91,15 @@ Request:
 
 **Response**
 
-  { 
-    currency: 'DSR',
-    unsold: 1.038396970406842,
-    balance: 0,
-    unpaid: 1.03839697,
-    paid24h: 4.89693467,
-    total: 5.93533164,
-    miners:[] 
-  }
+    {
+      currency: 'DSR',
+      unsold: 1.038396970406842,
+      balance: 0,
+      unpaid: 1.03839697,
+      paid24h: 4.89693467,
+      total: 5.93533164,
+      miners:[] 
+    }
 
 **Examples**
 
@@ -147,15 +148,15 @@ Request:
 
 **Response**
 
-  { 
-    currency: 'DSR',
-    unsold: 1.038396970406842,
-    balance: 0,
-    unpaid: 1.03839697,
-    paid24h: 4.89693467,
-    total: 5.93533164,
-    miners:[] 
-  }
+    {
+      currency: 'DSR',
+      unsold: 1.038396970406842,
+      balance: 0,
+      unpaid: 1.03839697,
+      paid24h: 4.89693467,
+      total: 5.93533164,
+      miners:[] 
+    }
 
 **Examples**
 
