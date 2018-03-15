@@ -69,7 +69,10 @@ Request:
 **Response**
 
   {"ALQO":
-    {"algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968}
+    {
+      "algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968
+
+    }
   }
 
 **Examples**
@@ -103,7 +106,9 @@ Request:
          difficulty: 606,
          subscribe: 1,
          accepted: 1084499.629,
-         rejected: 0 } ] 
+         rejected: 0 
+       } 
+      ] 
   }
 
 **Examples**
@@ -166,7 +171,9 @@ Request:
          difficulty: 606,
          subscribe: 1,
          accepted: 1084499.629,
-         rejected: 0 } ] 
+         rejected: 0 
+       } 
+      ] 
   }
 
 **Examples**
@@ -191,7 +198,10 @@ Request:
 **Response**
 
   {"ALQO":
-    {"algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968}
+    {
+      "algo":"quark","port":4033,"name":"ALQO","height":184569,"workers":5,"shares":"0","hashrate":"0","estimate":"0.00027","24h_blocks":0,"24h_btc":0,"lastblock":183066,"timesincelast":94968
+
+    }
   }
 
 **Examples**
