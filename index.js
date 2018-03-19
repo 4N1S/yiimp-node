@@ -76,6 +76,29 @@ yiimp.prototype.walletstream = function(address,callback) {
 	});
 
 }
+// Betastream 30000 duration obligatoire
+// yiimp.prototype.walletstream = function(address,callback) {
+// 	var duration=this.duration;
+
+// 	if(duration>10000){
+// 		duration=duration;
+
+// 	}else{
+// 		duration=10000;
+// 	}
+//     var self = this; // this creates a closure
+
+// 	setInterval(function(){
+// 		self.pubRequest("/walletEx?address="+address, {}, function(err,data) {
+// 			console.log(err);
+// 			console.log(data)
+// 			// return callback(data);
+// 		});
+	
+// 	}, 30000);
+
+
+// }
 yiimp.prototype.currenciestream = function(callback) {
 	var duration=this.duration;
 
@@ -104,11 +127,17 @@ yiimp.prototype.pubRequest = function(method, params, callback) {
 	};
 	console.log(options.path);
 	cb = function(response) {
+		if (response.statusCode < 200 || response.statusCode > 299) {
+		   callback(response.statusCode);
+		 }
+		if(response.statusCode==200){
 		var str = '';
 		response.on('data', function (chunk) {
 			str += chunk;
 			if (options.verbose) console.log(str);
 		});
+
+
 		response.on('end', function () {
 			var objFromJSON;
 			try {
@@ -119,10 +148,11 @@ yiimp.prototype.pubRequest = function(method, params, callback) {
 				return callback(err, null);
 			}
 		});
+		}
 	}
 	var req = https.request(options, cb);
 	req.on('error', function(err) {
-		callback(err, null);
+		callback(err.status, null);
 	});
 
 	req.end();
