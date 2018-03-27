@@ -1,6 +1,6 @@
 var yiimp = require('../index.js');
 // Public API
-var client = new yiimp("/api","unimining.net",5000);
+var client = new yiimp("/api","unimining.net");
 
 
 //function status
@@ -14,12 +14,11 @@ var client = new yiimp("/api","unimining.net",5000);
 // 	console.dir(data);
 // });
 var address="DBe3Syk3kWtWqU8o3zS4sdWBuXak8rK3LQ";
-
 //function wallet
-client.wallet(address,function (error,data) {
-	if(error) console.log("E!",error)
-	console.dir(data);
-});
+// client.wallet(address,function (error,data) {
+// 	if(error) console.log("E!",error)
+// 	console.dir(data);
+// });
 
 //Stream 
 // function home
@@ -28,11 +27,11 @@ client.wallet(address,function (error,data) {
 // 	console.dir(data);
 // });
 //function Currenciestream
-client.currenciestream(function (data) {
-	console.dir(data);
-});
-
-//function walletstream
-// client.walletstream(address,function (data) {
+// client.currenciestream(function (data) {
 // 	console.dir(data);
 // });
+
+//function walletstream
+client.walletstream(address,function (data) {
+	console.dir(data);
+});

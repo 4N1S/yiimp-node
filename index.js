@@ -5,12 +5,11 @@ var crypto = require('crypto');
 var url = require('url');
 var urlencode = require('urlencode');
 
-var yiimp = function(hostapi,dns,duration,key,secret,verbose) {
+var yiimp = function(hostapi,dns,key,secret,verbose) {
 	this.verbose = verbose || false;
 	this.version = "0.0.1";
 	this.key = key;
 	this.secret = secret;
-	this.duration=duration;
 	this.host = dns;
 	// this.host="examples.opendatasoft.com";
 	this.hostapi = "https://www."+dns+""+hostapi;
@@ -52,66 +51,30 @@ yiimp.prototype.status = function(callback) {
 
 //Stream
 yiimp.prototype.initstream = function(callback) {
-	var duration=this.duration;
 	this.pubRequest("/", {}, function(err, data) {
 		setInterval(function(){ 
 				callback.call(err, data);
-		}, duration);
+		}, 45000);
 	});
 
 }
 yiimp.prototype.walletstream = function(address,callback) {
-	var duration=this.duration;
-
-	if(duration>10000){
-		duration=duration;
-
-	}else{
-		duration=10000;
-	}
-	this.pubRequest("/walletEx?address="+address, {}, function(data, err) {
-		setInterval(function(){ 
-				callback.call(data, err);
-		}, duration);
+	console.log("[x]Init Stream Wallet")
+		this.pubRequest("/walletEx?address="+address, {}, function(data, err) {
+			setInterval(function(){ 
+					callback.call(data, err);
+			}, 45000);
+		});
 	});
 
 }
-// Betastream 30000 duration obligatoire
-// yiimp.prototype.walletstream = function(address,callback) {
-// 	var duration=this.duration;
-
-// 	if(duration>10000){
-// 		duration=duration;
-
-// 	}else{
-// 		duration=10000;
-// 	}
-//     var self = this; // this creates a closure
-
-// 	setInterval(function(){
-// 		self.pubRequest("/walletEx?address="+address, {}, function(err,data) {
-// 			console.log(err);
-// 			console.log(data)
-// 			// return callback(data);
-// 		});
-	
-// 	}, 30000);
-
-
-// }
 yiimp.prototype.currenciestream = function(callback) {
-	var duration=this.duration;
+	console.log("[x]Init Stream Currencies")
 
-	if(duration>10000){
-		duration=duration;
-
-	}else{
-		duration=10000;
-	}
 	this.pubRequest("/currencies", {}, function(data, err) {
 		setInterval(function(){ 
 				callback.call(data, err);
-		}, duration);
+		}, 45000);
 	});
 
 }
@@ -139,6 +102,7 @@ yiimp.prototype.pubRequest = function(method, params, callback) {
 
 
 		response.on('end', function () {
+			console.log(str);
 			var objFromJSON;
 			try {
 				objFromJSON = JSON.parse(str);
