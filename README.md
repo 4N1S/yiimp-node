@@ -131,8 +131,7 @@ Request:
 Request:
     /api/status
 
-    params:
-    duration: minimum 10s or highest     
+    params:     
 
     
 ```javasctipt
@@ -164,8 +163,7 @@ Request:
     /api/wallet
     
     params: 
-    Address: address target
-    duration: minimum 10s or highest     
+    Address: address target     
     
 ```javasctipt
  client.walletstream(address,function (data) {
@@ -188,8 +186,7 @@ Request:
 Request:
     /api/currencies
     
-    params: 
-    duration: minimum 10s or highest  
+    params:   
 
 
 ```javasctipt
